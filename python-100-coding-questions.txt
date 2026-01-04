@@ -393,4 +393,286 @@ l2 = list(map(int, input().split()))
 
 common = list(set(l1) & set(l2))
 print(common)
-```
+
+Question 12
+
+Topic: Loops & Conditions
+
+Question:
+Write a program to print all numbers between 1 and 100 that are divisible by both 3 and 5.
+
+Solution:
+
+for i in range(1, 101):
+    if i % 3 == 0 and i % 5 == 0:
+        print(i)
+
+Question 13
+
+Topic: Loops & Conditions
+
+Question:
+Write a program to find the count of prime numbers between 1 and n.
+
+Solution:
+
+n = int(input())
+count = 0
+
+for num in range(2, n + 1):
+    prime = True
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            prime = False
+            break
+    if prime:
+        count += 1
+
+print(count)
+
+Question 14
+
+Topic: Functions
+
+Question:
+Write a function to return the square and cube of a given number.
+
+Solution:
+
+def square_cube(n):
+    return n*n, n*n*n
+
+num = int(input())
+result = square_cube(num)
+print(result)
+
+Question 15
+
+Topic: Functions (Interview Question)
+
+Question:
+Write a function to check whether a number is a palindrome.
+
+Solution:
+
+def is_palindrome(n):
+    return str(n) == str(n)[::-1]
+
+num = int(input())
+print(is_palindrome(num))
+
+Question 16
+
+Topic: Lists
+
+Question:
+Write a program to find all elements in a list greater than the average of the list.
+
+Solution:
+
+l = list(map(int, input().split()))
+avg = sum(l) / len(l)
+
+result = []
+for i in l:
+    if i > avg:
+        result.append(i)
+
+print(result)
+
+Question 17
+
+Topic: Tuples
+
+Question:
+Write a program to convert a list into a tuple and find the maximum value.
+
+Solution:
+
+l = list(map(int, input().split()))
+t = tuple(l)
+
+print(max(t))
+
+Question 18
+
+Topic: Dictionaries
+
+Question:
+Write a program to create a dictionary with word counts from a sentence.
+
+Solution:
+
+sentence = input().split()
+d = {}
+
+for word in sentence:
+    d[word] = d.get(word, 0) + 1
+
+print(d)
+
+Question 19
+
+Topic: Loops and Conditions
+
+Question:
+Write a program to print the multiplication table of a given number up to 10.
+
+Solution:
+
+n = int(input())
+
+for i in range(1, 11):
+    print(n, "x", i, "=", n * i)
+
+Question 20
+
+Topic: Loops and Conditions
+
+Question:
+Write a program to find the factorial of a number using a while loop.
+
+Solution:
+
+n = int(input())
+fact = 1
+
+while n > 0:
+    fact *= n
+    n -= 1
+
+print(fact)
+
+Question 21
+
+Topic: Functions
+
+Question:
+Write a function to find the maximum element in a list.
+
+Solution:
+
+def find_max(l):
+    max_val = l[0]
+    for i in l:
+        if i > max_val:
+            max_val = i
+    return max_val
+
+l = list(map(int, input().split()))
+print(find_max(l))
+
+Question 22
+
+Topic: Functions
+
+Question:
+Write a function to count vowels in a given string.
+
+Solution:
+
+def count_vowels(s):
+    count = 0
+    for ch in s.lower():
+        if ch in 'aeiou':
+            count += 1
+    return count
+
+s = input()
+print(count_vowels(s))
+
+Question 23
+
+Topic: Lists
+
+Question:
+Write a program to rotate a list to the left by one position.
+
+Solution:
+
+l = list(map(int, input().split()))
+
+rotated = l[1:] + [l[0]]
+print(rotated)
+
+Question 24
+
+Topic: Lists
+
+Question:
+Write a program to merge two lists and remove duplicates.
+
+Solution:
+
+l1 = list(map(int, input().split()))
+l2 = list(map(int, input().split()))
+
+merged = list(set(l1 + l2))
+print(merged)
+
+Question 25
+
+Topic: Tuples
+
+Question:
+Write a program to find the index of an element in a tuple.
+
+Solution:
+
+t = tuple(map(int, input().split()))
+x = int(input())
+
+print(t.index(x))
+
+Question 26
+
+Topic: Dictionaries
+
+Question:
+Write a program to check whether a key exists in a dictionary.
+
+Solution:
+
+d = {1: 'a', 2: 'b', 3: 'c'}
+key = int(input())
+
+if key in d:
+    print("Key exists")
+else:
+    print("Key does not exist")
+
+Question 27
+
+Topic: Dictionaries
+
+Question:
+Write a program to find the sum of all values in a dictionary.
+
+Solution:
+
+d = {1: 10, 2: 20, 3: 30}
+total = 0
+
+for value in d.values():
+    total += value
+
+print(total)
+
+Question 28
+
+Topic: Mixed (Interview Level)
+
+Question:
+Write a function to remove all even numbers from a list.
+
+Solution:
+
+def remove_even(l):
+    result = []
+    for i in l:
+        if i % 2 != 0:
+            result.append(i)
+    return result
+
+l = list(map(int, input().split()))
+print(remove_even(l))
