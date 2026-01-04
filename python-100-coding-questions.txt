@@ -1,245 +1,150 @@
-# 100+ Python challenging programming exercises for Python 3
+Question 12
 
-## 1. Level description
-### Level 1	Beginner 
-Beginner means someone who has just gone through an introductory Python course. He can solve some problems with 1 or 2 Python classes or functions. Normally, the answers could directly be found in the textbooks.
-
-### Level 2	Intermediate 
-Intermediate means someone who has just learned Python, but already has a relatively strong programming background from before. He should be able to solve problems which may involve 3 or 3 Python classes or functions. The answers cannot be directly be found in the textbooks.
-
-### Level 3	Advanced. 
-He should use Python to solve more complex problem using more rich libraries functions and data structures and algorithms. He is supposed to solve the problem using several Python standard packages and advanced techniques.
-
-----
-
-## 2. Problem template
-
-Question
-Hints
-Solution
-
-----
-
-## 3. Questions
-
-### Question 1
-Level 1
+Level: Easy
 
 Question:
-Write a program which will find all such numbers which are divisible by 7 but are not a multiple of 5, between 2000 and 3200 (both included).
-The numbers obtained should be printed in a comma-separated sequence on a single line.
-
-Hints: 
-Consider use range(#begin, #end) method
-
-Solution:
-```python
-l=[]
-for i in range(2000, 3201):
-    if (i%7==0) and (i%5!=0):
-        l.append(str(i))
-
-print(','.join(l))
-```
-### Question 2
-Level 1 (Easy)
-
-Question:
-Write a program to accept a sequence of comma-separated numbers and generate a list and a tuple containing those numbers.
+Write a program to find the maximum of three numbers.
 
 Hints:
-Use split() and type casting.
+Use conditional statements.
 
 Solution:
-```
-values = input().split(',')
-l = list(values)
-t = tuple(values)
 
-print(l)
-print(t)
-```
+a = int(input())
+b = int(input())
+c = int(input())
 
-### Question 3
-Level 1 (Easy)
-
-Question:
-Write a program to calculate the factorial of a given number.
-
-Hints:
-Use a loop or recursion.
-
-Solution:
-```
-n = int(input())
-fact = 1
-
-for i in range(1, n+1):
-    fact *= i
-
-print(fact)
-```
-
-### Question 4
-Level 1 (Easy)
-
-Question:
-Write a program to create a dictionary that contains numbers (1–n) as keys and their squares as values.
-
-Hints:
-Use a dictionary and loop.
-
-Solution:
-```
-n = int(input())
-d = {}
-
-for i in range(1, n+1):
-    d[i] = i*i
-
-print(d)
-```
-
-### Question 5
-Level 1 (Easy – Interview Favorite)
-
-Question:
-Write a program to check whether a given number is even or odd.
-
-Hints:
-Use modulo operator %.
-
-Solution:
-```
-n = int(input())
-
-if n % 2 == 0:
-    print("Even")
+if a >= b and a >= c:
+    print(a)
+elif b >= a and b >= c:
+    print(b)
 else:
-    print("Odd")
-```
+    print(c)
 
-### Question 6
-Level 2 (Easy–Moderate)
+Question 13
+
+Level: Easy
 
 Question:
-Write a program to count the number of letters and digits in a given string.
+Write a program to check whether a number is positive, negative, or zero.
 
 Hints:
-Use isalpha() and isdigit().
+Use if–elif–else.
 
 Solution:
-```
+
+n = int(input())
+
+if n > 0:
+    print("Positive")
+elif n < 0:
+    print("Negative")
+else:
+    print("Zero")
+
+Question 14
+
+Level: Easy–Moderate
+
+Question:
+Write a program to find the length of a string without using len().
+
+Hints:
+Use a loop.
+
+Solution:
+
 s = input()
-letters = 0
-digits = 0
+count = 0
 
-for ch in s:
-    if ch.isalpha():
-        letters += 1
-    elif ch.isdigit():
-        digits += 1
+for _ in s:
+    count += 1
 
-print("Letters:", letters)
-print("Digits:", digits)
-```
+print(count)
 
-### Question 7
-Level 2 (Moderate – Interview Question)
+Question 15
+
+Level: Moderate (Interview Question)
 
 Question:
-Write a program to check whether a given string is a palindrome.
+Write a program to find the sum of digits of a number.
 
 Hints:
-Compare the string with its reverse.
+Use loop and modulo.
 
 Solution:
-```
-s = input()
 
-if s == s[::-1]:
-    print("Palindrome")
-else:
-    print("Not Palindrome")
-```
-
-### Question 8
-Level 2 (Moderate)
-
-Question:
-Write a program to remove duplicate values from a list.
-
-Hints:
-Use a set or loop.
-
-Solution:
-```
-l = list(map(int, input().split()))
-unique = list(set(l))
-
-print(unique)
-```
-
-### Question 9
-Level 2 (Moderate – Interview Favorite)
-
-Question:
-Write a program to find the largest and smallest number in a list.
-
-Hints:
-Use built-in functions or loop.
-
-Solution:
-```
-l = list(map(int, input().split()))
-
-print("Largest:", max(l))
-print("Smallest:", min(l))
-```
-
-### Question 10
-Level 3 (Moderate – Important Interview Question)
-
-Question:
-Write a program to find Fibonacci series up to n terms.
-
-Hints:
-Use iteration.
-
-Solution:
-```
 n = int(input())
-a, b = 0, 1
+total = 0
 
-for i in range(n):
-    print(a, end=" ")
-    a, b = b, a+b
-```
+while n > 0:
+    total += n % 10
+    n //= 10
 
-### Question 11
-Level 3 (Moderate – Interview Coding Question)
+print(total)
+
+Question 16
+
+Level: Moderate
 
 Question:
-Write a program to check whether a number is prime.
+Write a program to generate a list of even numbers up to n.
 
 Hints:
-Check divisibility up to square root.
+Use loop and condition.
 
 Solution:
-```
+
 n = int(input())
-flag = True
+evens = []
 
-if n <= 1:
-    flag = False
-else:
-    for i in range(2, int(n**0.5)+1):
-        if n % i == 0:
-            flag = False
-            break
+for i in range(1, n + 1):
+    if i % 2 == 0:
+        evens.append(i)
 
-if flag:
-    print("Prime")
+print(evens)
+
+Question 17
+
+Level: Moderate (Interview Favorite)
+
+Question:
+Write a program to check whether a number is an Armstrong number.
+
+Hints:
+Sum of digits raised to power of number of digits.
+
+Solution:
+
+n = int(input())
+temp = n
+power = len(str(n))
+total = 0
+
+while temp > 0:
+    digit = temp % 10
+    total += digit ** power
+    temp //= 10
+
+if total == n:
+    print("Armstrong Number")
 else:
-    print("Not Prime")
-```
+    print("Not an Armstrong Number")
+
+Question 18
+
+Level: Moderate
+
+Question:
+Write a program to find the common elements between two lists.
+
+Hints:
+Use set intersection.
+
+Solution:
+
+l1 = list(map(int, input().split()))
+l2 = list(map(int, input().split()))
+
+common = list(set(l1) & set(l2))
+print(common)
