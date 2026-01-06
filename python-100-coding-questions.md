@@ -1202,3 +1202,346 @@ try:
 except ZeroDivisionError:
     print("Cannot divide by zero")
 ```
+Question 58
+Level 2
+
+Question:
+Write a program to find all unique elements from a list entered by the user while preserving the original order.
+
+Hints:
+
+Use list
+
+Use input()
+
+Use membership checking
+
+Solution:
+```py
+n = int(input("Enter number of elements: "))
+lst = []
+unique = []
+
+for i in range(n):
+    val = input("Enter element: ")
+    lst.append(val)
+
+for item in lst:
+    if item not in unique:
+        unique.append(item)
+
+print("Unique elements:", unique)
+```
+Question 59
+Level 2
+
+Question:
+Write a program to reverse each word in a sentence entered by the user.
+
+Hints:
+
+Use split()
+
+Use slicing
+
+Use loop
+
+Solution:
+```py
+sentence = input("Enter a sentence: ")
+words = sentence.split()
+
+result = []
+for word in words:
+    result.append(word[::-1])
+
+print(" ".join(result))
+```
+Question 60
+Level 2
+
+Question:
+Write a program to check whether two strings entered by the user are anagrams.
+
+Hints:
+
+Use sorting
+
+Use input()
+
+Ignore spaces
+
+Solution:
+```py
+s1 = input("Enter first string: ").replace(" ", "")
+s2 = input("Enter second string: ").replace(" ", "")
+
+if sorted(s1) == sorted(s2):
+    print("Anagrams")
+else:
+    print("Not Anagrams")
+```
+Question 61
+Level 2
+
+Question:
+Write a program to generate a dictionary where keys are numbers from 1 to N and values are their squares.
+
+Hints:
+
+Use dictionary
+
+Use loop
+
+Use input()
+
+Solution:
+```py
+n = int(input("Enter value of N: "))
+result = {}
+
+for i in range(1, n + 1):
+    result[i] = i * i
+
+print(result)
+```
+Question 62
+Level 3 (HARD)
+
+Question:
+Write a program to simulate a Library Management System where the user can:
+
+Add books
+
+Borrow a book
+
+Return a book
+
+Each book should be stored with its availability status.
+
+Hints:
+
+Use dictionary
+
+Use loop
+
+Use conditional statements
+
+Solution:
+```py
+library = {}
+
+while True:
+    print("\n1. Add Book\n2. Borrow Book\n3. Return Book\n4. Exit")
+    choice = input("Enter choice: ")
+
+    if choice == "1":
+        book = input("Enter book name: ")
+        library[book] = "Available"
+
+    elif choice == "2":
+        book = input("Enter book name to borrow: ")
+        if book in library and library[book] == "Available":
+            library[book] = "Borrowed"
+            print("Book borrowed successfully")
+        else:
+            print("Book not available")
+
+    elif choice == "3":
+        book = input("Enter book name to return: ")
+        if book in library:
+            library[book] = "Available"
+            print("Book returned successfully")
+
+    elif choice == "4":
+        break
+```
+Explanation (Hard Program):
+
+Dictionary stores book name as key and status as value
+
+Menu-driven loop allows continuous operations
+
+Demonstrates real-world application + data structures
+
+Question 63
+Level 2
+
+Question:
+Write a program to find the second largest number in a list entered by the user.
+
+Hints:
+
+Use set()
+
+Use sorting
+
+Solution:
+```py
+n = int(input("Enter number of elements: "))
+nums = []
+
+for i in range(n):
+    nums.append(int(input("Enter number: ")))
+
+nums = list(set(nums))
+nums.sort()
+
+print("Second largest:", nums[-2])
+```
+Question 64
+Level 3 (HARD)
+
+Question:
+Write a program to validate a password with the following rules:
+
+Minimum 8 characters
+
+At least one uppercase
+
+At least one lowercase
+
+At least one digit
+
+At least one special character
+
+Hints:
+
+Use any()
+
+Use string methods
+
+Use conditions
+
+Solution:
+```py
+password = input("Enter password: ")
+
+special = "!@#$%^&*"
+
+if (len(password) >= 8 and
+    any(c.isupper() for c in password) and
+    any(c.islower() for c in password) and
+    any(c.isdigit() for c in password) and
+    any(c in special for c in password)):
+    print("Strong Password")
+else:
+    print("Invalid Password")
+```
+Explanation (Hard Program):
+
+Uses multiple conditions combined logically
+
+any() checks character existence efficiently
+
+Mimics real authentication systems
+
+Question 65
+Level 3 (HARD)
+
+Question:
+Write a program to implement a simple ATM system with:
+
+Balance inquiry
+
+Deposit
+
+Withdrawal
+
+Exit option
+
+The program should run continuously until the user exits.
+
+Hints:
+
+Use loop
+
+Use functions
+
+Use conditional statements
+
+Solution:
+```py
+balance = int(input("Enter initial balance: "))
+
+while True:
+    print("\n1. Balance\n2. Deposit\n3. Withdraw\n4. Exit")
+    choice = input("Enter choice: ")
+
+    if choice == "1":
+        print("Balance:", balance)
+
+    elif choice == "2":
+        amount = int(input("Enter deposit amount: "))
+        balance += amount
+
+    elif choice == "3":
+        amount = int(input("Enter withdraw amount: "))
+        if amount <= balance:
+            balance -= amount
+        else:
+            print("Insufficient balance")
+
+    elif choice == "4":
+        print("Thank you")
+        break
+```
+Explanation (Hard Program):
+
+Menu-driven system
+
+Real-world financial logic
+
+Combines loops + conditions + user input
+
+Question 66
+Level 2
+
+Question:
+Write a program to find common elements between two lists entered by the user.
+
+Hints:
+
+Use sets
+
+Use input()
+
+Solution:
+```py
+n1 = int(input("Enter size of first list: "))
+list1 = [input("Enter element: ") for _ in range(n1)]
+
+n2 = int(input("Enter size of second list: "))
+list2 = [input("Enter element: ") for _ in range(n2)]
+
+common = list(set(list1) & set(list2))
+print("Common elements:", common)
+```
+Question 67
+Level 2
+
+Question:
+Write a program to count vowels and consonants in a string entered by the user.
+
+Hints:
+
+Use loop
+
+Use string methods
+
+Solution:
+```py
+text = input("Enter a string: ").lower()
+vowels = "aeiou"
+
+v = c = 0
+for ch in text:
+    if ch.isalpha():
+        if ch in vowels:
+            v += 1
+        else:
+            c += 1
+
+print("Vowels:", v)
+print("Consonants:", c)
+```
