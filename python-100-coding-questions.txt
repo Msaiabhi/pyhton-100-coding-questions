@@ -1204,7 +1204,7 @@ except ZeroDivisionError:
 ```
 Question 58
 Level 2
-
+HARD
 Question:
 Write a program to find all unique elements from a list entered by the user while preserving the original order.
 
