@@ -9,5 +9,5 @@ Topics covered:
 - Functions
 - Lists, tuples, dictionaries
 - Object-Oriented Programming
-
+- mini projects
 Created by Sai for Python interview preparation and practice.
